@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./assets/bulma.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            overflow-y: hidden;
+        }
+    </style>
+    <title>LogMeIn Rescue Installer</title>
+</head>
+
+<body>
+    <div class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column">
+                    <figure class='image container is-128x128'><img src='./assets/a.png'></figure>
+                    <h1 class="title is-1">LogMeIn Rescue</h1>
+                    <p>Welcome to the <b>LogMeIn Rescue</b> installer. By clicking <b>Install</b>, you agree to our <a
+                            href='https://www.logmeininc.com/legal/terms-and-conditions'>Terms And Conditions</a>.</p>
+                    <br>
+                </div>
+                <div class="column has-text-centered">
+                    <button class='button is-focused' onclick='next()'>Install</button>
+                    <button class='button' onclick='exit()'>Exit</button><br><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="hero-footer">
+            <div class="container has-text-centered">
+                <small style="font-size: 12px;">This is a <b>cracked/modified</b> version of <b>LogMeIn Rescue</b> and
+                    may be detected as malware during the installation process.</small>
+                    <br><br>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        function next() {
+            ipcRenderer.send('next');
+        }
+
+        function exit() {
+            ipcRenderer.send('exit');
+        };
+    </script>
+</body>
+
+</html>

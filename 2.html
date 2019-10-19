@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html,
+        body {
+            overflow-y: hidden;
+        }
+    </style>
+    <link href="./assets/bulma.css" rel="stylesheet">
+    <title>LogMeIn Rescue Installer</title>
+</head>
+
+<body>
+    <div class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column">
+                    <figure class='image container is-128x128'><img src='./assets/a.png'></figure><br><b
+                        class="is-2">Installing LogMeIn Rescue...</b>
+                </div>
+                <div class="column has-text-centered">
+                    <progress class="progress is-large" max="100"></progress>
+                    <button class='button' onclick='exit()'>Exit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        function exit() {
+            ipcRenderer.send('exit');
+        };
+    </script>
+</body>
+
+</html>
