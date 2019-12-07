@@ -1,4 +1,4 @@
-Copyright (c) 2019 Elitis. All rights reserved.
+Copyright (c) 2019 Elitis. Some rights reserved.
 Content property of respective owners.
 
 ---
